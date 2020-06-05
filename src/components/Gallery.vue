@@ -77,6 +77,10 @@ export default {
             this.$store.dispatch(types.UPDATE_IS_LOADING, false);
         })
     },
+    beforeRouteUpdate (to, from, next) {
+        this.fetchImages(to.query.page);
+        next();
+    },
     methods: {
         fetchImages(page) {
             this.$store.dispatch(types.UPDATE_IS_LOADING, true);
