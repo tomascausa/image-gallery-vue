@@ -1,32 +1,29 @@
 <template>
-    <div v-if="isLoading">
+    <div>
         <div class="flex flex-wrap image-list mt-10 -p-3">
-            <div v-for="image in 10" :key="image.id" class="w-1/2 lg:w-1/5">
-                <v-sheet
-                    :color="`grey darken-2`"
-                    class="p-3"
-                >
-                    <v-skeleton-loader
-                    class="mx-auto"
-                    max-width="300"
-                    type="image"
-                    ></v-skeleton-loader>
-                </v-sheet>
-            </div>
-        </div>
-    </div>
-    <div v-else>
-        <div class="flex flex-wrap image-list mt-10 -p-3">
-            <div v-for="image in images" :key="image.id" class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
-                <router-link :to="{ name: 'image-detail', params: { id: image.id }}">
-                    <div class="image-item p-3">
-                        <div
-                            class="image-bg w-full h-full"
-                            :style="{ 'background-image': 'url(' + image.cropped_picture.replace(/\s/g, '%20') + ')' }"
-                        ></div>
-                    </div>
-                </router-link>
-            </div>
+            <template v-if="isLoading">
+                <div v-for="image in 10" :key="image.id" class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+                    <v-sheet :color="`grey darken-2`" class="p-3">
+                        <v-skeleton-loader
+                            class="mx-auto"
+                            max-width="300"
+                            type="image"
+                        ></v-skeleton-loader>
+                    </v-sheet>
+                </div>
+            </template>
+            <template v-else>
+                <div v-for="image in images" :key="image.id" class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+                    <router-link :to="{ name: 'image-detail', params: { id: image.id }}">
+                        <div class="image-item p-3">
+                            <div
+                                class="image-bg w-full h-full"
+                                :style="{ 'background-image': 'url(' + image.cropped_picture.replace(/\s/g, '%20') + ')' }"
+                            ></div>
+                        </div>
+                    </router-link>
+                </div>
+            </template>
         </div>
         <div class="text-center mt-8">
             <v-pagination
@@ -39,6 +36,7 @@
             ></v-pagination>
         </div>
     </div>
+    
 </template>
 
 <script>
