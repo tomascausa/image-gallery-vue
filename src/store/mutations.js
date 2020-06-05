@@ -1,3 +1,5 @@
+import * as types from './types';
+
 export default {
     [types.MUTATE_UPDATE_TOKEN]: (state, payload) => {
         state.token = payload;
