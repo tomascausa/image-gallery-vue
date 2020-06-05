@@ -97,3 +97,21 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+    .theme--light.v-pagination .v-pagination__item.v-pagination__item--active {
+        background-color: #FF471A;
+    }
+    .image-list {
+        .image-item{
+            height:230px; 
+            width: 100%;
+            .image-bg {
+                background-color: grey;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+</style>

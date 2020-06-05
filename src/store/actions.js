@@ -1,3 +1,4 @@
+import axios from './../axios-auth';
 import * as types from './types';
 
 export default {
