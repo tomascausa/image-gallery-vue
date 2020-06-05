@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import getters from './getters';
+import mutations from './mutations';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -9,5 +12,7 @@ export default new Vuex.Store({
         images: [],
         selectedImage: null,
         isLoading: false
-    }
+    },
+    getters,
+    mutations
 })
