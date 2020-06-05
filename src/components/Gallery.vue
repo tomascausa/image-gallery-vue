@@ -58,5 +58,19 @@ export default {
             this.$store.dispatch(types.UPDATE_IS_LOADING, false);
         })
     },
+    methods: {
+        fetchImages(page) {
+            this.$store.dispatch(types.UPDATE_IS_LOADING, true);
+            this.$store.dispatch(types.FETCH_IMAGES, page)
+            .then((response) => {
+                this.page = response.data.page;
+                this.pageCount = response.data.pageCount;
+                this.$store.dispatch(types.UPDATE_IS_LOADING, false);
+            })
+            .catch((error) => {
+                this.$store.dispatch(types.UPDATE_IS_LOADING, false);
+            })
+        }
+    }
 }
 </script>
