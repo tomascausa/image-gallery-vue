@@ -22,5 +22,21 @@ export default {
                     reject(error);
                 })
         })
-    }
+    },
+    [types.FETCH_IMAGES]: ({ commit }, payload) => {
+        return new Promise((resolve, reject) => {
+            axios.get('/images', {
+                    params: {
+                        page: payload
+                    }
+                })
+                .then(response => {
+                    commit(types.MUTATE_FETCH_IMAGES, response.data.pictures);
+                    resolve(response);
+                })
+                .catch(error => {
+                    reject(error);
+                })
+        })
+    },
 }
