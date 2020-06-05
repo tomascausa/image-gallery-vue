@@ -111,6 +111,18 @@
         created() {
             this.fetchImage(this.$route.params.id);
         },
+        mounted() {
+            let vm = this;
+            window.addEventListener("keydown", e => {
+                if (!vm.$store.getters[types.IS_LOADING]) {
+                    if (e.keyCode === 37) {
+                        vm.fetchImage(vm.findImage(false).id)
+                    } else if (e.keyCode === 39) {
+                        vm.fetchImage(vm.findImage(true).id)
+                    }
+                }
+            });
+        },
         methods: {
             fetchImage(id) {
                 this.$store.dispatch(types.UPDATE_IS_LOADING, true);

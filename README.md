@@ -16,7 +16,7 @@ Since a tight schedule was given for this assignment, there are a couple of cons
 
 - The possibility of adding Typescript & styled-components was opted out.
 - Atomic components would have been desirable for every case. But because a lack of time, I just implemented the main components.
-- I integrate Vuetify to access UI components in a fast and practical way without wasting too much time.
+- Vuetify was integrated to access UI components in a fast and practical way without wasting too much time.
 - VueZoomer is used to zoom and pan images for a matter of time optimization.
 
 ---
