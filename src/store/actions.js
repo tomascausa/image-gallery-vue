@@ -5,6 +5,9 @@ export default {
     [types.UPDATE_IS_LOADING]: ({ commit }, payload) => {
         commit(types.MUTATE_UPDATE_IS_LOADING, payload)
     },
+    [types.UPDATE_TOKEN]: ({ commit }, payload) => {
+        commit(types.MUTATE_UPDATE_TOKEN, payload)
+    },
     [types.OBTAIN_TOKEN]: ({ commit }, payload) => {
         return new Promise((resolve, reject) => {
             axios.post('/auth', {
@@ -40,4 +43,16 @@ export default {
                 })
         })
     },
+    [types.GET_IMAGE_DETAIL]: ({ commit }, payload) => {
+        return new Promise((resolve, reject) => {
+            axios.get('/images/' + payload, {})
+                .then(response => {
+                    commit(types.MUTATE_SET_SELECTED_IMAGE, response.data);
+                    resolve(response);
+                })
+                .catch(error => {
+                    reject(error);
+                })
+        })
+    }
 }
