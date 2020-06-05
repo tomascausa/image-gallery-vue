@@ -18,6 +18,7 @@ Since a tight schedule was given for this assignment, there are a couple of cons
 - Atomic components would have been desirable for every case. But because a lack of time, I just implemented the main components.
 - Vuetify was integrated to access UI components in a fast and practical way without wasting too much time.
 - VueZoomer is used to zoom and pan images for a matter of time optimization.
+- I added arrows key images navigation functionality, but the latter does not work 100%. It needs some more extra work...
 
 ---
 
