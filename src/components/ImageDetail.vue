@@ -18,12 +18,14 @@
                             <v-btn icon color="#ffffff" @click="$refs.zoomer.zoomIn()">
                                 <v-icon>mdi-magnify-plus</v-icon>
                             </v-btn>
-                            <div class="mx-10"></div>
+                        </v-toolbar-items>
+                        <v-spacer></v-spacer>
+                        <v-toolbar-items>
                             <v-btn icon color="#ffffff" @click="fetchImage(findImage(false).id)">
-                                <v-icon>mdi-chevron-left</v-icon>
+                                <v-icon size="35">mdi-chevron-left</v-icon>
                             </v-btn>
                             <v-btn icon color="#ffffff" @click="fetchImage(findImage(true).id)">
-                                <v-icon>mdi-chevron-right</v-icon>
+                                <v-icon size="35">mdi-chevron-right</v-icon>
                             </v-btn>
                         </v-toolbar-items>
                     </v-toolbar>
