@@ -5,8 +5,8 @@ import 'vuetify/dist/vuetify.min.css';
 // import VueZoomer from 'vue-zoomer';
 
 import App from './App.vue';
-// import { routes } from './routes';
-// import store from './store/store';
+import { routes } from './routes';
+import store from './store/store';
 
 Vue.use(VueRouter);
 Vue.use(Vuetify);
