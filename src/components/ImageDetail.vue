@@ -150,3 +150,11 @@
         }
     }
 </script>
+
+<style lang="scss">
+    .v-btn--fab.v-size--default.v-btn--absolute.v-btn--bottom {
+        right: 30px;
+        bottom: 30px;
+        z-index: 9999;
+    }
+</style>
