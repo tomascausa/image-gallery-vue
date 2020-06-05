@@ -17,7 +17,26 @@
     </div>
     <div v-else>
         <div class="flex flex-wrap image-list mt-10 -p-3">
-            
+            <div v-for="image in images" :key="image.id" class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+                <router-link :to="{ name: 'image-detail', params: { id: image.id }}">
+                    <div class="image-item p-3">
+                        <div
+                            class="image-bg w-full h-full"
+                            :style="{ 'background-image': 'url(' + image.cropped_picture.replace(/\s/g, '%20') + ')' }"
+                        ></div>
+                    </div>
+                </router-link>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <v-pagination
+                v-model="page"
+                :length="pageCount"
+                :total-visible="10"
+                prev-icon="mdi-chevron-left"
+                next-icon="mdi-chevron-right"
+                v-on:input="$router.push({name: 'gallery', query: { page: $event }})"
+            ></v-pagination>
         </div>
     </div>
 </template>
