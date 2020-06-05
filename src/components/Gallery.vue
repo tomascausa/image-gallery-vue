@@ -47,6 +47,16 @@ export default {
                 this.$store.dispatch(types.UPDATE_IS_LOADING, value);
             }
         }
-    }
+    },
+    created() {
+        this.$store.dispatch(types.UPDATE_IS_LOADING, true);
+        this.$store.dispatch(types.OBTAIN_TOKEN, { apiKey: '23567b218376f79d9415' })
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            this.$store.dispatch(types.UPDATE_IS_LOADING, false);
+        })
+    },
 }
 </script>
